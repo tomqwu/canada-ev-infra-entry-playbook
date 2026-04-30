@@ -1,0 +1,63 @@
+{
+  "asOf": "2026-04",
+  "horizons": [
+    {
+      "id": "h1",
+      "label": "0–6 months",
+      "theme": "Validation & setup",
+      "objective": "Convert thesis into a defensible, fundable Canadian platform.",
+      "milestones": [
+        "Incorporate Canadian entity (federal + provincial registrations).",
+        "Hire country lead, head of deployment, and head of regulatory.",
+        "Sign 2 utility cooperation MOUs (target ON + QC or BC).",
+        "Identify 3 pilot sites: 2 commercial DCFC, 1 fleet depot.",
+        "Compliance map: CSA, Measurement Canada, ZEVIP eligibility, OCPP/ISO 15118.",
+        "Finalize go/no-go memo for Phase 2 (pilot deployment)."
+      ],
+      "decisionGate": "Approve Phase 2 pilot capex only if: 2 utility MOUs signed, 3 sites cleared, ZEVIP path identified."
+    },
+    {
+      "id": "h2",
+      "label": "6–24 months",
+      "theme": "Pilot & first scale",
+      "objective": "Prove unit economics and build operational muscle.",
+      "milestones": [
+        "Energize 2 DCFC pilots and 1 BESS-buffered fleet depot.",
+        "Launch home charging program via 1–2 dealer/retail partners.",
+        "Submit ZEVIP and provincial funding applications.",
+        "Software platform (CPMS + telemetry + billing) live in Canadian cloud region.",
+        "Reach 10–15 sites under construction or operating by month 24.",
+        "Begin packaging O&M/software for third-party site hosts."
+      ],
+      "decisionGate": "Proceed to expansion phase only if: 1) blended utilization ≥ pro-forma base, 2) at least 1 funding award secured, 3) zero serious safety/compliance incidents."
+    },
+    {
+      "id": "h3",
+      "label": "2–7 years",
+      "theme": "Expansion & ecosystem",
+      "objective": "Become a credible Canadian operator across charging, storage, and software.",
+      "milestones": [
+        "Operate 50–100 charging sites across ON/QC/BC, with 8–12 fleet depots.",
+        "BESS attached at majority of new sites; participate in capacity/ancillary markets where allowed.",
+        "Software/O&M generates ≥25% of recurring revenue.",
+        "Standardized partnership template with Canadian utilities and fleet operators.",
+        "Optional: selective commercial vehicle pilots, only if tariff/policy environment changes."
+      ],
+      "decisionGate": "Decision on local assembly / JV: only if expansion phase EBITDA-positive in base case and policy environment stable."
+    },
+    {
+      "id": "h4",
+      "label": "7–20 years",
+      "theme": "Localization & long-horizon optionality",
+      "objective": "Earn the right to be treated as a Canadian new-energy company.",
+      "milestones": [
+        "Local assembly of charging hardware and/or BESS modules.",
+        "Strategic JV or minority investment with Canadian fleet, utility, or industrial partner.",
+        "Long-duration storage and grid services as a stand-alone business line.",
+        "Optional: local-assembly or licensed-model vehicle participation, decided on policy + economics, not on initial thesis.",
+        "Canadian R&D footprint: charging power electronics, BMS, software."
+      ],
+      "decisionGate": "Continuous review: every 24 months, reassess thesis vs. policy, capital cost, and competitive structure."
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "asOf": "2026-04",
+  "scale": {
+    "likelihood": ["Low", "Medium", "High"],
+    "impact": ["Low", "Medium", "High"]
+  },
+  "risks": [
+    {
+      "id": "tariff",
+      "title": "Tariff and trade policy on Chinese EVs and components",
+      "category": "Policy",
+      "likelihood": "High",
+      "impact": "High",
+      "narrative": "Canada has aligned with the U.S. on a 100% surtax on Chinese-made EVs and additional duties on steel/aluminum. Vehicle-led entry is structurally exposed; infrastructure, software, and BESS components face a more navigable but still scrutinized path.",
+      "mitigations": [
+        "Lead with charging hardware, BESS, software, and O&M rather than vehicles.",
+        "Source non-controversial components and consider Canadian/Mexican assembly for hardware.",
+        "Maintain optionality: design supply chain so vehicle entry can be deferred or skipped."
+      ]
+    },
+    {
+      "id": "geopolitics",
+      "title": "Geopolitical sentiment and procurement scrutiny",
+      "category": "Policy",
+      "likelihood": "High",
+      "impact": "Medium",
+      "narrative": "Public sector and critical-infrastructure procurement increasingly screen Chinese-origin technology. Brand and ownership structure must be unambiguous.",
+      "mitigations": [
+        "Operate through a Canadian-incorporated entity with local board representation.",
+        "Use Canadian partners as the customer-facing brand where appropriate.",
+        "Pre-engage federal/provincial procurement and security review processes."
+      ]
+    },
+    {
+      "id": "interconnect",
+      "title": "Grid interconnection delays",
+      "category": "Execution",
+      "likelihood": "High",
+      "impact": "High",
+      "narrative": "Utility queue times of 9–18 months are common for DCFC and fleet depot loads, especially in Ontario and BC.",
+      "mitigations": [
+        "Pair sites with BESS to defer or shrink interconnect upgrades.",
+        "Pre-screen sites for available capacity before signing leases.",
+        "Sign master cooperation agreements with utilities early."
+      ]
+    },
+    {
+      "id": "permitting",
+      "title": "Permitting and municipal coordination",
+      "category": "Execution",
+      "likelihood": "Medium",
+      "impact": "Medium",
+      "narrative": "Charging deployment touches municipal zoning, fire code, and electrical inspection. Timelines vary widely by jurisdiction.",
+      "mitigations": [
+        "Standardize a permit-ready site design package per province.",
+        "Engage municipal economic development offices early.",
+        "Prioritize provinces and cities with streamlined EV permitting."
+      ]
+    },
+    {
+      "id": "utilization",
+      "title": "Public charging utilization below pro-forma",
+      "category": "Commercial",
+      "likelihood": "Medium",
+      "impact": "High",
+      "narrative": "Highway and urban DCFC sites can take 18–30 months to mature. Underutilization is the dominant downside in scenario modeling.",
+      "mitigations": [
+        "Anchor early sites with fleet contracts (depot + en-route).",
+        "Diversify revenue with BESS market participation and software fees.",
+        "Use cost-share funding to keep payback within tolerable range even at low utilization."
+      ]
+    },
+    {
+      "id": "fx-supply",
+      "title": "FX and supply chain volatility",
+      "category": "Operational",
+      "likelihood": "Medium",
+      "impact": "Medium",
+      "narrative": "CAD/USD/CNY swings and global cell supply tightness can move project capex by ±15%.",
+      "mitigations": [
+        "Hedge major equipment orders.",
+        "Qualify two suppliers per critical component.",
+        "Stage capex commitments in tranches tied to phase gates."
+      ]
+    },
+    {
+      "id": "cyber",
+      "title": "Cybersecurity and data residency",
+      "category": "Operational",
+      "likelihood": "Medium",
+      "impact": "High",
+      "narrative": "EV chargers and BESS are connected critical infrastructure. Canadian customers will demand data residency and supply-chain security attestations.",
+      "mitigations": [
+        "Host all customer telemetry in Canadian cloud regions.",
+        "Adopt OCPP 2.0.1 with security profile 3 and ISO 15118 plug-and-charge.",
+        "Independent third-party penetration testing before commercial launch."
+      ]
+    },
+    {
+      "id": "talent",
+      "title": "Local talent and labor",
+      "category": "Operational",
+      "likelihood": "Medium",
+      "impact": "Medium",
+      "narrative": "Certified electricians and station commissioning engineers are constrained.",
+      "mitigations": [
+        "Long-term framework agreements with regional electrical contractors.",
+        "In-house training program for commissioning and O&M.",
+        "Modular site design that reduces on-site labor hours."
+      ]
+    }
+  ]
+}

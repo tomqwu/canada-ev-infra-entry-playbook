@@ -1,0 +1,37 @@
+---
+import { withBase } from "../lib/url";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-24 border-t border-line bg-white">
+  <div
+    class="container-page py-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+  >
+    <div class="space-y-1">
+      <p class="font-semibold text-ink">Canada EV Infrastructure Entry Playbook</p>
+      <p class="text-sm text-ink-muted max-w-xl">
+        Research and planning resource. Figures are planning assumptions, not
+        investment advice. All sources are subject to verification before
+        external use.
+      </p>
+    </div>
+    <nav aria-label="Footer">
+      <ul class="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+        <li><a href={withBase("/strategy")}>Strategy</a></li>
+        <li><a href={withBase("/research")}>Research</a></li>
+        <li><a href={withBase("/financials")}>Financials</a></li>
+        <li><a href={withBase("/roadmap")}>Roadmap</a></li>
+        <li><a href={withBase("/sources")}>Sources</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="border-t border-line">
+    <div
+      class="container-page py-4 text-xs text-ink-muted flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
+    >
+      <span>© {year} · Internal research site</span>
+      <span>EN · 中文 sections to be added</span>
+    </div>
+  </div>
+</footer>

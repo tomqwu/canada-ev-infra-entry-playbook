@@ -1,0 +1,41 @@
+---
+interface Metric {
+  id?: string;
+  label: string;
+  value: string;
+  context?: string;
+  sourceId?: string;
+}
+
+interface Props {
+  metrics: Metric[];
+  columns?: 2 | 3 | 4;
+}
+
+const { metrics, columns = 4 } = Astro.props as Props;
+
+const colClass: Record<number, string> = {
+  2: "sm:grid-cols-2",
+  3: "sm:grid-cols-2 lg:grid-cols-3",
+  4: "sm:grid-cols-2 lg:grid-cols-4",
+};
+---
+
+<div class={`grid grid-cols-1 ${colClass[columns]} gap-4`}>
+  {
+    metrics.map((m) => (
+      <div class="card card-pad">
+        <p class="text-xs uppercase tracking-[0.16em] text-ink-muted">{m.label}</p>
+        <p class="mt-2 font-serif text-2xl text-ink leading-tight">{m.value}</p>
+        {m.context && (
+          <p class="mt-3 text-sm text-ink/75 leading-relaxed">{m.context}</p>
+        )}
+        {m.sourceId && (
+          <p class="mt-3 text-[11px] uppercase tracking-wider text-ink-muted">
+            Source: <code class="font-mono text-[11px]">{m.sourceId}</code>
+          </p>
+        )}
+      </div>
+    ))
+  }
+</div>

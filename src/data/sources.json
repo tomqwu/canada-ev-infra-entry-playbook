@@ -1,0 +1,132 @@
+{
+  "asOf": "2026-04",
+  "note": "Source list is intentionally placeholder. URLs must be verified against the issuing organization's current publication before any external use.",
+  "sources": [
+    {
+      "id": "src-zev-standard",
+      "title": "Electric Vehicle Availability Standard",
+      "organization": "Government of Canada",
+      "category": "Policy",
+      "url": "TBD",
+      "verification": "to be verified",
+      "notes": "Federal regulation establishing 20% by 2026 and 100% by 2035 ZEV new-sales targets for light-duty vehicles."
+    },
+    {
+      "id": "src-nrcan-stations",
+      "title": "Electric Charging and Alternative Fuelling Stations Locator",
+      "organization": "Natural Resources Canada",
+      "category": "Public dataset",
+      "url": "TBD",
+      "verification": "to be verified",
+      "notes": "Public registry of charging stations and ports across Canada."
+    },
+    {
+      "id": "src-zev-infra-gap",
+      "title": "EV Charging Infrastructure Gap Analysis",
+      "organization": "Natural Resources Canada / IEA cross-reference",
+      "category": "Research",
+      "url": "TBD",
+      "verification": "to be verified",
+      "notes": "Order-of-magnitude estimate of public ports required by 2035 to support 100% ZEV sales."
+    },
+    {
+      "id": "src-zevip",
+      "title": "Zero Emission Vehicle Infrastructure Program",
+      "organization": "Natural Resources Canada",
+      "category": "Funding program",
+      "url": "TBD",
+      "verification": "to be verified",
+      "notes": "Federal cost-share program for charging deployment."
+    },
+    {
+      "id": "src-cib",
+      "title": "Canada Infrastructure Bank — ZEV Charging Initiative",
+      "organization": "Canada Infrastructure Bank",
+      "category": "Funding program",
+      "url": "TBD",
+      "verification": "to be verified",
+      "notes": "Long-term low-cost debt for charging networks and depot electrification."
+    },
+    {
+      "id": "src-sreps",
+      "title": "Smart Renewables and Electrification Pathways",
+      "organization": "Natural Resources Canada",
+      "category": "Funding program",
+      "url": "TBD",
+      "verification": "to be verified",
+      "notes": "Funding for storage, renewables, and grid-edge integration."
+    },
+    {
+      "id": "src-sif",
+      "title": "Strategic Innovation Fund",
+      "organization": "Innovation, Science and Economic Development Canada",
+      "category": "Funding program",
+      "url": "TBD",
+      "verification": "to be verified",
+      "notes": "Federal program for strategic manufacturing, R&D, and innovation projects."
+    },
+    {
+      "id": "src-evchargeon",
+      "title": "EV ChargeON / Save On Energy",
+      "organization": "Province of Ontario",
+      "category": "Funding program",
+      "url": "TBD",
+      "verification": "to be verified",
+      "notes": "Provincial cost-share for charging in smaller communities and corridors."
+    },
+    {
+      "id": "src-rouvert",
+      "title": "Roulez vert / Hydro-Québec EV programs",
+      "organization": "Province of Québec / Hydro-Québec",
+      "category": "Funding program",
+      "url": "TBD",
+      "verification": "to be verified",
+      "notes": "Provincial/utility incentives for residential and commercial charging."
+    },
+    {
+      "id": "src-cleanbc",
+      "title": "CleanBC Go Electric",
+      "organization": "Province of British Columbia",
+      "category": "Funding program",
+      "url": "TBD",
+      "verification": "to be verified",
+      "notes": "BC incentives for public, workplace, multi-unit, and fleet charging."
+    },
+    {
+      "id": "src-fleet-share",
+      "title": "Fleet share of vehicle kilometres travelled",
+      "organization": "Statistics Canada / Transport Canada",
+      "category": "Statistics",
+      "url": "TBD",
+      "verification": "to be verified",
+      "notes": "Used to scope the fleet depot opportunity."
+    },
+    {
+      "id": "src-home-charging",
+      "title": "Home charging share of EV energy",
+      "organization": "International Energy Agency",
+      "category": "Research",
+      "url": "TBD",
+      "verification": "to be verified",
+      "notes": "Cross-market reference for residential charging share."
+    },
+    {
+      "id": "src-china-tariff",
+      "title": "Canadian surtax on Chinese-made EVs",
+      "organization": "Department of Finance Canada",
+      "category": "Policy",
+      "url": "TBD",
+      "verification": "to be verified",
+      "notes": "100% surtax in effect since 2024; foundational reason for infrastructure-first strategy."
+    },
+    {
+      "id": "src-interconnect",
+      "title": "DCFC grid interconnect lead times",
+      "organization": "Provincial utilities (cross-reference)",
+      "category": "Industry knowledge",
+      "url": "TBD",
+      "verification": "to be verified",
+      "notes": "Anecdotal and operator-reported figures used for planning."
+    }
+  ]
+}

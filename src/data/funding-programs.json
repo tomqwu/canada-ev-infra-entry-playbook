@@ -1,0 +1,76 @@
+{
+  "asOf": "2026-04",
+  "note": "Funding stack assumed for an infrastructure-first entry. All amounts and eligibility must be verified against current program guidelines before commitment.",
+  "programs": [
+    {
+      "id": "zevip",
+      "name": "Zero Emission Vehicle Infrastructure Program (ZEVIP)",
+      "agency": "Natural Resources Canada",
+      "instrument": "Cost-share grant",
+      "typicalShare": "Up to 50% of eligible project costs",
+      "fitFor": ["Public DCFC", "Workplace L2", "Multi-unit residential", "Fleet"],
+      "notes": "Primary federal lever for charging deployment. Application windows open periodically.",
+      "sourceId": "src-zevip"
+    },
+    {
+      "id": "cib-zev",
+      "name": "Canada Infrastructure Bank — ZEV Charging Initiative",
+      "agency": "Canada Infrastructure Bank",
+      "instrument": "Long-term low-cost debt",
+      "typicalShare": "Up to 80% of eligible capex (project-finance style)",
+      "fitFor": ["Large-scale public DCFC networks", "Fleet depot electrification"],
+      "notes": "Suited for portfolios of sites with predictable utilization.",
+      "sourceId": "src-cib"
+    },
+    {
+      "id": "smart-renewables",
+      "name": "Smart Renewables and Electrification Pathways (SREPs)",
+      "agency": "Natural Resources Canada",
+      "instrument": "Grant",
+      "typicalShare": "Project-dependent",
+      "fitFor": ["BESS", "Grid-edge storage paired with charging", "Renewables integration"],
+      "notes": "Useful when storage is paired with charging to defer interconnect upgrades.",
+      "sourceId": "src-sreps"
+    },
+    {
+      "id": "ic-itb",
+      "name": "Strategic Innovation Fund (SIF)",
+      "agency": "Innovation, Science and Economic Development Canada",
+      "instrument": "Grant / repayable contribution",
+      "typicalShare": "Negotiated per project",
+      "fitFor": ["Local manufacturing or assembly", "R&D and software localization"],
+      "notes": "Relevant only at the local-assembly / JV phase, not at validation phase.",
+      "sourceId": "src-sif"
+    },
+    {
+      "id": "prov-on",
+      "name": "Ontario Save On Energy / EV ChargeON",
+      "agency": "Province of Ontario",
+      "instrument": "Grant",
+      "typicalShare": "Up to 75% of eligible costs at qualifying sites",
+      "fitFor": ["Public charging in smaller communities and along highway corridors"],
+      "notes": "Stackable with ZEVIP in many cases; verify per intake.",
+      "sourceId": "src-evchargeon"
+    },
+    {
+      "id": "prov-qc",
+      "name": "Roulez vert / Hydro-Québec programs",
+      "agency": "Province of Québec / Hydro-Québec",
+      "instrument": "Rebate / co-investment",
+      "typicalShare": "Variable",
+      "fitFor": ["Residential L2", "Multi-unit", "Fleet"],
+      "notes": "QC has the deepest EV adoption; partnership with Hydro-Québec is strategically critical.",
+      "sourceId": "src-rouvert"
+    },
+    {
+      "id": "prov-bc",
+      "name": "CleanBC Go Electric",
+      "agency": "Province of British Columbia",
+      "instrument": "Rebate / grant",
+      "typicalShare": "Variable",
+      "fitFor": ["Public, workplace, multi-unit, and fleet charging"],
+      "notes": "BC Hydro is an active partner for managed charging programs.",
+      "sourceId": "src-cleanbc"
+    }
+  ]
+}

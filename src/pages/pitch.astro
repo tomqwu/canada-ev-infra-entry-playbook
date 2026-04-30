@@ -1,0 +1,106 @@
+---
+import Base from "../layouts/Base.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+
+const sections = [
+  {
+    id: "problem",
+    label: "Problem",
+    title: "Canada's EV transition is funded but execution-bound",
+    body: "Canada has a 100% ZEV-by-2035 mandate, multi-billion-dollar funding programs, and growing utility participation. It does not have enough operators capable of building, owning, and operating charging and storage infrastructure at speed. Public ports must roughly fourteen-x by 2035; fleet depots are barely electrified; software and O&M are still fragmented.",
+  },
+  {
+    id: "why-now",
+    label: "Why now",
+    title: "The window where capital, policy, and execution capacity all favour an entrant",
+    body: "Federal cost-share is active. Provincial utilities are under regulatory pressure to enable managed charging. Fleet operators have committed to electrification but lack turnkey partners. The next 24–36 months are when long-term operator positions get formed; missing this window is expensive.",
+  },
+  {
+    id: "wedge",
+    label: "Our wedge",
+    title: "Charging, storage, software, and service — before vehicles",
+    body: "We enter Canada through a Canadian-incorporated entity, focused on commercial DCFC, fleet depot charging with BESS, home and multi-unit charging, and a Canadian-hosted CPMS / O&M platform. We do not lead with vehicles. The 100% surtax on Chinese-made EVs makes that path uneconomic and politically loaded, while infrastructure is welcomed and partially funded.",
+  },
+  {
+    id: "model",
+    label: "Business model",
+    title: "Three revenue lines, increasing in margin",
+    body: "Revenue lines: (1) Charging revenue from owned and operated sites, (2) BESS-attached energy services and depot operations, and (3) Software and O&M for owned sites in year one and third-party hosts thereafter. Cost-share funding (ZEVIP, CIB, provincial programs) reduces capex intensity, and BESS reduces interconnect and demand-charge exposure.",
+  },
+  {
+    id: "capital",
+    label: "Capital requirement",
+    title: "Tranched capital tied to decision gates",
+    body: "Validation phase (0–6 months): C$1.5–3M. Pilot phase (6–18 months): C$8–14M. Expansion (18–36 months): C$30–55M. Local assembly / JV (36+ months): C$80–200M, gated on validated unit economics and policy clarity. Capital is staged, not committed up front.",
+  },
+  {
+    id: "risk",
+    label: "Risk mitigation",
+    title: "We design around the four risks that matter",
+    body: "Tariff and procurement scrutiny: Canadian entity, Canadian data residency, transparent ownership, infrastructure-only in early phases. Grid interconnect: BESS-buffered sites, pre-screened interconnect capacity, master cooperation agreements with utilities. Utilization: anchor sites with fleet contracts; diversify revenue with software. Cybersecurity: OCPP 2.0.1 security profile 3, ISO 15118 plug-and-charge, third-party penetration testing.",
+  },
+  {
+    id: "next-90",
+    label: "Next 90 days",
+    title: "What changes once you back this thesis",
+    body: "Incorporate the Canadian entity. Hire country lead, head of deployment, head of regulatory. Sign two utility cooperation MOUs. Identify three pilot sites (two commercial DCFC and one fleet depot). Submit the first ZEVIP application. Stand up the software platform's Canadian environment. Deliver a phase-2 go/no-go memo on month 6.",
+  },
+];
+---
+
+<Base
+  title="Pitch"
+  description="One-page investor pitch narrative for an infrastructure-first Canadian entry."
+>
+  <section class="container-page py-16 sm:py-20">
+    <SectionHeader
+      eyebrow="Investor pitch"
+      title="Canada · Infrastructure-first market entry"
+      description="A one-page narrative pitch. Each section is short, structured, and copy-ready for a deck or memo."
+    />
+
+    <div class="card card-pad max-w-3xl">
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+        <span class="eyebrow">Headline</span>
+        <span class="tag-accent">Recommended path</span>
+      </div>
+      <p class="font-serif text-2xl sm:text-3xl text-ink leading-tight">
+        Lead with charging, storage, software, and service. Earn the right to vehicles.
+      </p>
+      <p class="mt-4 text-ink/85 leading-relaxed">
+        Canada is mid-build on EV infrastructure: deployment is funded, policy is set, but execution capacity is the bottleneck. The right entry vector for a Chinese new-energy company is the infrastructure stack, not the vehicle. The strategy is capital-efficient, policy-aware, and preserves long-term optionality.
+      </p>
+    </div>
+
+    <ol class="mt-12 space-y-6 max-w-3xl">
+      {
+        sections.map((s, i) => (
+          <li class="card card-pad">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="font-mono text-xs text-ink-muted">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span class="eyebrow">{s.label}</span>
+            </div>
+            <h3 class="font-serif text-xl text-ink leading-snug">
+              {s.title}
+            </h3>
+            <p class="mt-3 text-ink/90 leading-relaxed">{s.body}</p>
+          </li>
+        ))
+      }
+    </ol>
+
+    <div class="mt-12 rounded-xl bg-navy-900 text-white px-6 sm:px-10 py-10">
+      <p class="eyebrow text-accent-300 mb-3">The ask</p>
+      <p class="font-serif text-2xl leading-tight">
+        Underwrite the validation and pilot phases — C$10–20M over 18 months — against
+        the explicit phase-2 decision gate.
+      </p>
+      <p class="mt-4 text-navy-100">
+        If the gate is met, we expand. If it is not, we stop or replan. The gate
+        is the protection.
+      </p>
+    </div>
+  </section>
+</Base>
