@@ -1,0 +1,148 @@
+---
+import Base from "../layouts/Base.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import StrategyCards from "../components/StrategyCards.astro";
+import RiskMatrix from "../components/RiskMatrix.astro";
+import FundingTable from "../components/FundingTable.astro";
+
+import risks from "../data/risks.json";
+import funding from "../data/funding-programs.json";
+
+const strategyOptions = [
+  {
+    id: "A",
+    label: "Option A",
+    title: "Infrastructure & new-energy ecosystem first",
+    thesis:
+      "Lead with charging, BESS, software, and service through a Canadian-incorporated entity. Focus on commercial DCFC, fleet depots, and home/multi-unit charging. Generate revenue and earn regulatory and partner trust before any vehicle decision.",
+    capitalNeed: "C$10–20M over 18 months",
+    timeline: "Revenue in 12–18 months",
+    risk: "Moderate (execution-led)",
+    expectedReturn: "Solid base; large optionality",
+    milestones: [
+      "Canadian entity stood up",
+      "2 utility cooperation MOUs (target ON + QC or BC)",
+      "2 DCFC pilots and 1 BESS-buffered fleet depot energized",
+      "ZEVIP / provincial funding secured",
+      "Software platform live in Canadian cloud region",
+    ],
+    recommended: true,
+  },
+  {
+    id: "B",
+    label: "Option B",
+    title: "Limited vehicle demonstration / import",
+    thesis:
+      "Bring a small commercial fleet — buses, vans, light trucks — for demonstration and brand placement. Tariff exposure is high and consumer-facing volume is unlikely. Treat as a brand and engineering signal, not as a revenue strategy.",
+    capitalNeed: "C$5–15M (most of which should be considered write-off risk)",
+    timeline: "12–24 months to deploy demonstrations",
+    risk: "High (policy, brand, consumer trust)",
+    expectedReturn: "Low direct return; signal value only",
+    milestones: [
+      "Pilot fleet placed with anchor customer (e.g. utility or municipality)",
+      "Demonstration units in 1–2 cities",
+      "Public engagement with regulators on safety, recall, and parts supply",
+    ],
+  },
+  {
+    id: "C",
+    label: "Option C",
+    title: "Long-term local assembly / JV / acquisition",
+    thesis:
+      "Stand up Canadian assembly, take a strategic stake in a local OEM or supplier, or acquire a Canadian operator. Highest long-term return but capital-intensive and policy-dependent. Decision is gated on infrastructure-phase results.",
+    capitalNeed: "C$80–200M (gated)",
+    timeline: "5–10+ years",
+    risk: "Capital-intensive; policy-dependent",
+    expectedReturn: "Highest if validated; contingent",
+    milestones: [
+      "Decision gated on infrastructure-phase results and policy clarity",
+      "Site, JV partner, and SIF/SREPs-style support secured",
+      "Local-content and labour commitments clarified",
+    ],
+  },
+];
+---
+
+<Base
+  title="Strategy"
+  description="Three market-entry options assessed against capital, timeline, risk, and expected return. Option A — infrastructure and new-energy ecosystem first — is recommended."
+>
+  <section class="container-page py-16 sm:py-20">
+    <SectionHeader
+      eyebrow="Strategy"
+      title="Three options assessed against the same yardstick"
+      description="Each option is evaluated on capital need, timeline, risk, and expected return. The recommended option is the one that earns optionality without paying for it up front."
+    />
+    <StrategyCards options={strategyOptions} />
+  </section>
+
+  <section class="bg-white border-y border-line">
+    <div class="container-page py-16 sm:py-20">
+      <SectionHeader
+        eyebrow="Comparison"
+        title="Side-by-side"
+        description="A condensed view of the same three options."
+      />
+      <div class="card overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="table-clean min-w-[760px]">
+            <thead>
+              <tr>
+                <th>Option</th>
+                <th>Capital need</th>
+                <th>Timeline</th>
+                <th>Risk</th>
+                <th>Expected return</th>
+                <th>Verdict</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                strategyOptions.map((o) => (
+                  <tr>
+                    <td>
+                      <div class="font-semibold text-ink">{o.title}</div>
+                      <div class="text-xs text-ink-muted mt-0.5">{o.label}</div>
+                    </td>
+                    <td>{o.capitalNeed}</td>
+                    <td>{o.timeline}</td>
+                    <td>{o.risk}</td>
+                    <td>{o.expectedReturn}</td>
+                    <td>
+                      {o.recommended ? (
+                        <span class="tag-accent">Recommended</span>
+                      ) : (
+                        <span class="tag">Optional / gated</span>
+                      )}
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="funding" class="container-page py-16 sm:py-20">
+    <SectionHeader
+      eyebrow="Funding stack"
+      title="Federal and provincial cost-share that supports the wedge"
+      description="The infrastructure-first wedge is supported by a layered funding stack. The numbers below are planning ranges and require verification per intake."
+    />
+    <FundingTable programs={funding.programs} />
+    <p class="mt-4 text-xs text-ink-muted">{funding.note}</p>
+  </section>
+
+  <section id="risks" class="bg-white border-y border-line">
+    <div class="container-page py-16 sm:py-20">
+      <SectionHeader
+        eyebrow="Risk register"
+        title="Top execution and policy risks"
+        description="Each risk is paired with explicit, deliberate mitigations."
+      />
+      <RiskMatrix risks={risks.risks} />
+    </div>
+  </section>
+</Base>

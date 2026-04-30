@@ -1,0 +1,52 @@
+{
+  "asOf": "2026-04",
+  "note": "Reference set of incumbent operators and adjacent platforms. Used to size the wedge, not to suggest poaching of partnerships.",
+  "categories": [
+    {
+      "id": "dcfc-networks",
+      "label": "Public DCFC networks",
+      "players": [
+        { "name": "Electrify Canada", "footprint": "Highway corridors, ON/QC/BC/AB", "modelLine": "Hardware-led, OEM-aligned" },
+        { "name": "FLO", "footprint": "National (HQ in QC)", "modelLine": "Vertically integrated: hardware + software + ops" },
+        { "name": "Tesla Supercharger", "footprint": "National, opening to non-Tesla EVs", "modelLine": "Closed/semi-open ecosystem" },
+        { "name": "Petro-Canada EV Fast Charge", "footprint": "Trans-Canada highway", "modelLine": "Retail fuel + EV hybrid" }
+      ]
+    },
+    {
+      "id": "home-l2",
+      "label": "Home & multi-unit L2",
+      "players": [
+        { "name": "FLO Home", "footprint": "National", "modelLine": "Hardware + utility partnerships" },
+        { "name": "ChargePoint Home", "footprint": "National", "modelLine": "Hardware + app" },
+        { "name": "Local electrical contractors", "footprint": "Regional", "modelLine": "Install-only, pull-through for hardware brands" }
+      ]
+    },
+    {
+      "id": "fleet-depot",
+      "label": "Fleet depot electrification",
+      "players": [
+        { "name": "Geotab + utility programs", "footprint": "National", "modelLine": "Telematics + managed charging" },
+        { "name": "Sparkion / Power Edison-style integrators", "footprint": "Selective", "modelLine": "BESS + DCFC integration" },
+        { "name": "OEM fleet programs (Ford Pro, GM Envolve, etc.)", "footprint": "National", "modelLine": "OEM-anchored bundle" }
+      ]
+    },
+    {
+      "id": "software-oam",
+      "label": "Software / O&M / CPMS",
+      "players": [
+        { "name": "Driivz / AmpUp / EV Connect", "footprint": "North America", "modelLine": "CPMS / managed services" },
+        { "name": "FLO Network Operating System", "footprint": "Canada-led", "modelLine": "Owned platform" },
+        { "name": "OCPP-native open-source stacks", "footprint": "Global", "modelLine": "DIY by larger operators" }
+      ]
+    },
+    {
+      "id": "bess",
+      "label": "Battery storage (BESS)",
+      "players": [
+        { "name": "Tesla Megapack / Powerwall", "footprint": "National", "modelLine": "Bundled hardware + software" },
+        { "name": "Hithium / CATL / BYD (via integrators)", "footprint": "Global supply", "modelLine": "Cells/modules into Canadian integrators" },
+        { "name": "Local integrators (e.g., Convergent, Energy Storage Canada members)", "footprint": "Project-based", "modelLine": "EPC + ownership" }
+      ]
+    }
+  ]
+}

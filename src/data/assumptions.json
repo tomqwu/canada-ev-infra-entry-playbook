@@ -1,0 +1,101 @@
+{
+  "currency": "CAD",
+  "asOf": "2026-04",
+  "disclaimer": "All figures are planning assumptions, not investment advice.",
+  "phases": [
+    {
+      "id": "validate",
+      "label": "0–6 months · Validation & Setup",
+      "objective": "Stand up Canadian entity, secure local partners, complete regulatory and grid feasibility for 3 candidate sites.",
+      "capitalLowM": 1.5,
+      "capitalHighM": 3.0,
+      "headcount": "4–6",
+      "outputs": [
+        "Incorporated Canadian entity (federal + provincial)",
+        "Signed MOUs with 2 utilities and 1 site host",
+        "Engineering scope for 2 pilot sites",
+        "Compliance review: CSA, Measurement Canada, ZEVIP"
+      ]
+    },
+    {
+      "id": "pilot",
+      "label": "6–18 months · Pilot Deployment",
+      "objective": "Energize 2 commercial DCFC pilot sites and 1 fleet depot with BESS-buffered charging, plus 50–100 home installs through dealer/retail partners.",
+      "capitalLowM": 8.0,
+      "capitalHighM": 14.0,
+      "headcount": "12–18",
+      "outputs": [
+        "2 DCFC pilot sites operational (4–8 stalls each)",
+        "1 fleet depot pilot energized with BESS buffer",
+        "Software platform live: telemetry, billing, OCPP 2.0.1",
+        "First ZEVIP / NRCan funding application submitted"
+      ]
+    },
+    {
+      "id": "expand",
+      "label": "18–36 months · Expansion",
+      "objective": "Scale to 15–25 charging sites across ON/QC/BC, deepen utility partnerships, package O&M software for third-party operators.",
+      "capitalLowM": 30.0,
+      "capitalHighM": 55.0,
+      "headcount": "35–60",
+      "outputs": [
+        "15–25 operational sites incl. 3+ fleet depots",
+        "Recurring software/O&M revenue from third-party hosts",
+        "Battery storage attached to >40% of new sites",
+        "Provincial regulator engagement on managed charging tariffs"
+      ]
+    },
+    {
+      "id": "localize",
+      "label": "36+ months · Local Assembly / JV (gated)",
+      "objective": "Only if pilot economics, policy, and partner trust are validated: stand up Canadian assembly, JV, or selective vehicle import.",
+      "capitalLowM": 80.0,
+      "capitalHighM": 200.0,
+      "headcount": "100+",
+      "outputs": [
+        "Local assembly of charging hardware and/or BESS modules",
+        "JV or strategic minority with Canadian fleet/utility partner",
+        "Selective commercial vehicle pilots, only after tariff and trade clarity",
+        "Decision gate: continue, pause, or exit"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "conservative",
+      "label": "Conservative",
+      "tone": "downside",
+      "totalCapexM": 35,
+      "sitesYear3": 12,
+      "fleetDepots": 1,
+      "homeInstalls": 600,
+      "softwareSeats": 1500,
+      "ebitdaYear5Pct": -8,
+      "notes": "Permitting and grid interconnect delays push 30%–50% of sites by 6–12 months. Funding programs partially cover capex."
+    },
+    {
+      "id": "base",
+      "label": "Base",
+      "tone": "neutral",
+      "totalCapexM": 65,
+      "sitesYear3": 22,
+      "fleetDepots": 4,
+      "homeInstalls": 2500,
+      "softwareSeats": 6000,
+      "ebitdaYear5Pct": 6,
+      "notes": "Two provinces lead (ON, QC). Recurring O&M and software cover ~30% of revenue by year 5."
+    },
+    {
+      "id": "upside",
+      "label": "Upside",
+      "tone": "upside",
+      "totalCapexM": 110,
+      "sitesYear3": 38,
+      "fleetDepots": 9,
+      "homeInstalls": 7000,
+      "softwareSeats": 18000,
+      "ebitdaYear5Pct": 14,
+      "notes": "Strong fleet depot pull, BESS attached at >60% of sites, regulated tariff for managed charging unlocks utility co-investment."
+    }
+  ]
+}

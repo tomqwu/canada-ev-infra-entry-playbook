@@ -1,0 +1,219 @@
+---
+import Base from "../layouts/Base.astro";
+import Hero from "../components/Hero.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import MetricGrid from "../components/MetricGrid.astro";
+import StrategyCards from "../components/StrategyCards.astro";
+import RoadmapTimeline from "../components/RoadmapTimeline.astro";
+import RiskMatrix from "../components/RiskMatrix.astro";
+import CTA from "../components/CTA.astro";
+
+import marketMetrics from "../data/market-metrics.json";
+import assumptions from "../data/assumptions.json";
+import risks from "../data/risks.json";
+import roadmap from "../data/roadmap.json";
+
+const heroMeta = [
+  { label: "Capital, validation phase", value: "C$1.5–3M" },
+  { label: "Capital, pilot phase", value: "C$8–14M" },
+  { label: "Decision gate", value: "18–36 months" },
+];
+
+const heroActions = [
+  { label: "Read research", href: "/research", style: "primary" as const },
+  {
+    label: "View financial model",
+    href: "/financials",
+    style: "secondary" as const,
+  },
+  { label: "Open pitch", href: "/pitch", style: "accent" as const },
+];
+
+const strategyOptions = [
+  {
+    id: "A",
+    label: "Option A",
+    title: "Infrastructure & new-energy ecosystem first",
+    thesis:
+      "Lead with charging, storage, O&M software, and service through a Canadian entity. Capital-efficient, policy-aware, and the most credible path to a long-term position.",
+    capitalNeed: "C$10–20M over 18 months",
+    timeline: "Revenue in 12–18 months",
+    risk: "Moderate",
+    expectedReturn: "Solid base; large optionality",
+    milestones: [
+      "Canadian entity + 2 utility MOUs",
+      "2 DCFC pilots + 1 BESS-buffered fleet depot",
+      "ZEVIP / provincial funding secured",
+      "Software platform live in Canadian cloud region",
+    ],
+    recommended: true,
+  },
+  {
+    id: "B",
+    label: "Option B",
+    title: "Limited vehicle demonstration / import",
+    thesis:
+      "Bring a small commercial fleet for demonstration. Heavy tariff exposure and limited near-term revenue. Use only as a brand signal, never as the core revenue strategy.",
+    capitalNeed: "C$5–15M (mostly write-off risk)",
+    timeline: "12–24 months to deploy demos",
+    risk: "High (policy, brand)",
+    expectedReturn: "Low direct return; signal value only",
+    milestones: [
+      "Pilot fleet placement with anchor customer",
+      "Demonstration units in 1–2 cities",
+      "Public engagement with regulators on technology safety",
+    ],
+  },
+  {
+    id: "C",
+    label: "Option C",
+    title: "Long-term local assembly / JV / acquisition",
+    thesis:
+      "Stand up Canadian assembly or take a strategic stake in a local OEM, supplier, or operator. Only credible after infrastructure validation and policy clarity.",
+    capitalNeed: "C$80–200M (gated)",
+    timeline: "5–10+ years",
+    risk: "Capital-intensive; policy-dependent",
+    expectedReturn: "Highest if validated, but contingent",
+    milestones: [
+      "Decision gated on infrastructure-phase results",
+      "Site, JV partner, and SIF/IRB-style support secured",
+      "Local-content and labour commitments clarified",
+    ],
+  },
+];
+---
+
+<Base
+  title="Overview"
+  description="Infrastructure-first entry strategy for Chinese new-energy companies expanding into Canada — charging, storage, software, and service before vehicles."
+>
+  <Hero
+    eyebrow="Executive briefing · April 2026"
+    title="Charging, storage, software, and service — before vehicles."
+    lede="A capital-efficient, policy-aware playbook for Chinese new-energy companies entering the Canadian market. Lead with infrastructure. Earn the right to vehicles."
+    meta={heroMeta}
+    actions={heroActions}
+  />
+
+  <!-- Core thesis -->
+  <section class="container-page py-20">
+    <SectionHeader
+      eyebrow="Core thesis"
+      title="Lead with infrastructure. Earn vehicle optionality."
+      description="Direct vehicle import faces a 100% surtax and ongoing trade scrutiny. Charging, BESS, software, and home-charging deployment do not. The same operational footprint that builds revenue today is the asset that will earn vehicle optionality later."
+    />
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+      <div class="card card-pad">
+        <p class="eyebrow mb-3">Why infrastructure-first</p>
+        <ul class="space-y-2 text-sm text-ink/85">
+          <li class="flex gap-2"><span class="text-accent-600 mt-1">›</span><span>Cost-share funding is committed and active.</span></li>
+          <li class="flex gap-2"><span class="text-accent-600 mt-1">›</span><span>Execution capacity, not policy intent, is the bottleneck.</span></li>
+          <li class="flex gap-2"><span class="text-accent-600 mt-1">›</span><span>Charging, BESS, and software face less political weight than vehicles.</span></li>
+        </ul>
+      </div>
+      <div class="card card-pad">
+        <p class="eyebrow mb-3">What we build</p>
+        <ul class="space-y-2 text-sm text-ink/85">
+          <li class="flex gap-2"><span class="text-accent-600 mt-1">›</span><span>Commercial DCFC + fleet depot charging.</span></li>
+          <li class="flex gap-2"><span class="text-accent-600 mt-1">›</span><span>BESS-buffered sites to manage interconnect risk.</span></li>
+          <li class="flex gap-2"><span class="text-accent-600 mt-1">›</span><span>OCPP-native platform hosted in a Canadian cloud region.</span></li>
+          <li class="flex gap-2"><span class="text-accent-600 mt-1">›</span><span>Home and multi-unit charging through retail and dealer channels.</span></li>
+        </ul>
+      </div>
+      <div class="card card-pad">
+        <p class="eyebrow mb-3">What we earn</p>
+        <ul class="space-y-2 text-sm text-ink/85">
+          <li class="flex gap-2"><span class="text-accent-600 mt-1">›</span><span>Recurring revenue from sites, software, and O&amp;M.</span></li>
+          <li class="flex gap-2"><span class="text-accent-600 mt-1">›</span><span>Trust capital with utilities, regulators, and partners.</span></li>
+          <li class="flex gap-2"><span class="text-accent-600 mt-1">›</span><span>The right to consider local assembly, JV, or selective vehicle programs later.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market opportunity -->
+  <section class="bg-white border-y border-line">
+    <div class="container-page py-20">
+      <SectionHeader
+        eyebrow="Market opportunity"
+        title="Canada is mid-build. Demand is set; supply is the bottleneck."
+        description={marketMetrics.headline}
+      />
+      <MetricGrid metrics={marketMetrics.metrics} columns={4} />
+    </div>
+  </section>
+
+  <!-- Strategic entry wedge -->
+  <section class="container-page py-20">
+    <SectionHeader
+      eyebrow="Strategic entry wedge"
+      title="Three options. One is recommended."
+      description="The infrastructure-first path is the most capital-efficient and the most policy-aware. The other two remain optional, gated on results."
+    />
+    <StrategyCards options={strategyOptions} />
+  </section>
+
+  <!-- Capital snapshot -->
+  <section class="bg-white border-y border-line">
+    <div class="container-page py-20">
+      <SectionHeader
+        eyebrow="Capital requirement snapshot"
+        title="Phased capital plan with explicit decision gates"
+        description="Capital is tranched. Each phase has its own outcome, headcount, and go/no-go test."
+      />
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {assumptions.phases.map((p) => (
+          <div class="card card-pad">
+            <p class="eyebrow mb-2">{p.label}</p>
+            <p class="font-serif text-2xl text-ink">
+              C${p.capitalLowM}–{p.capitalHighM}M
+            </p>
+            <p class="mt-1 text-xs text-ink-muted">Headcount: {p.headcount}</p>
+            <p class="mt-3 text-sm text-ink/85 leading-relaxed">{p.objective}</p>
+          </div>
+        ))}
+      </div>
+      <p class="mt-6 text-xs text-ink-muted">{assumptions.disclaimer}</p>
+    </div>
+  </section>
+
+  <!-- Risk snapshot -->
+  <section class="container-page py-20">
+    <SectionHeader
+      eyebrow="Risk snapshot"
+      title="Top risks, with explicit mitigations"
+      description="Tariff, grid interconnection, utilization, and procurement scrutiny dominate. Each is navigable; each requires a deliberate design choice."
+    />
+    <RiskMatrix risks={risks.risks.slice(0, 4)} />
+    <p class="mt-6 text-sm">
+      <a href={(import.meta.env.BASE_URL ?? "/") + "strategy#risks"}>See full risk register →</a>
+    </p>
+  </section>
+
+  <!-- Roadmap preview -->
+  <section class="bg-white border-y border-line">
+    <div class="container-page py-20">
+      <SectionHeader
+        eyebrow="Roadmap preview"
+        title="Sequenced over 0–6 months, 6–24 months, 2–7 years, 7–20 years"
+        description="The first 6 months convert the thesis into a defensible Canadian platform. Everything after is gated on what that platform proves."
+      />
+      <RoadmapTimeline horizons={roadmap.horizons} />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="container-page py-20">
+    <CTA
+      eyebrow="Next steps"
+      title="Read the research, run the model, take the pitch."
+      description="The site is designed for internal planning, partner conversations, and investor briefings. Pages are kept short, structured, and copy-ready."
+      actions={[
+        { label: "Read research", href: "/research", style: "primary" },
+        { label: "View financial model", href: "/financials", style: "secondary" },
+        { label: "Open pitch", href: "/pitch", style: "accent" },
+      ]}
+    />
+  </section>
+</Base>

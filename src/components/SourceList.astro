@@ -1,0 +1,65 @@
+---
+interface Source {
+  id: string;
+  title: string;
+  organization: string;
+  category: string;
+  url: string;
+  verification: "verified" | "to be verified" | "stale" | string;
+  notes?: string;
+}
+
+interface Props {
+  sources: Source[];
+}
+
+const { sources } = Astro.props as Props;
+
+function verifClass(v: string): string {
+  if (v === "verified") return "tag-accent";
+  if (v === "stale") return "tag-risk";
+  return "tag-warn";
+}
+---
+
+<div class="card overflow-hidden">
+  <div class="overflow-x-auto">
+    <table class="table-clean min-w-[760px]">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Organization</th>
+          <th>Category</th>
+          <th>Link</th>
+          <th>Status</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          sources.map((s) => (
+            <tr>
+              <td>
+                <div class="font-semibold text-ink">{s.title}</div>
+                <div class="mt-0.5 text-[11px] uppercase tracking-wider text-ink-muted">
+                  <code class="font-mono text-[11px]">{s.id}</code>
+                </div>
+              </td>
+              <td>{s.organization}</td>
+              <td>
+                <span class="tag">{s.category}</span>
+              </td>
+              <td>
+                <code class="font-mono text-xs text-ink-muted">{s.url}</code>
+              </td>
+              <td>
+                <span class={verifClass(s.verification)}>{s.verification}</span>
+              </td>
+              <td class="text-ink/80">{s.notes}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

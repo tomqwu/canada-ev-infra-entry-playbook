@@ -1,0 +1,59 @@
+---
+interface Horizon {
+  id: string;
+  label: string;
+  theme: string;
+  objective: string;
+  milestones: string[];
+  decisionGate?: string;
+}
+
+interface Props {
+  horizons: Horizon[];
+}
+
+const { horizons } = Astro.props as Props;
+---
+
+<ol class="relative border-l border-line pl-6 space-y-10">
+  {
+    horizons.map((h) => (
+      <li class="relative">
+        <span
+          class="absolute -left-[34px] top-1.5 h-3 w-3 rounded-full bg-accent-500 ring-4 ring-accent-100"
+          aria-hidden="true"
+        />
+        <div class="card card-pad">
+          <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-2">
+            <span class="eyebrow">{h.label}</span>
+            <h3 class="font-serif text-xl text-ink">{h.theme}</h3>
+          </div>
+          <p class="text-sm text-ink/85 leading-relaxed">{h.objective}</p>
+          <div class="mt-4">
+            <p class="text-[11px] uppercase tracking-wider text-ink-muted mb-2">
+              Milestones
+            </p>
+            <ul class="space-y-1.5 text-sm text-ink/90">
+              {h.milestones.map((m) => (
+                <li class="flex gap-2">
+                  <span class="text-accent-600 mt-1">›</span>
+                  <span>{m}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {h.decisionGate && (
+            <div class="mt-5 pt-5 border-t border-line">
+              <p class="text-[11px] uppercase tracking-wider text-ink-muted mb-2">
+                Decision gate
+              </p>
+              <p class="text-sm text-ink/90 leading-relaxed">
+                {h.decisionGate}
+              </p>
+            </div>
+          )}
+        </div>
+      </li>
+    ))
+  }
+</ol>

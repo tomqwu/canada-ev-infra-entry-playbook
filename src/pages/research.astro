@@ -1,0 +1,76 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../layouts/Base.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import { withBase } from "../lib/url";
+
+const reports = (await getCollection("reports")).sort((a, b) => {
+  if (a.data.order !== b.data.order) return a.data.order - b.data.order;
+  return b.data.lastUpdated.getTime() - a.data.lastUpdated.getTime();
+});
+
+function formatDate(d: Date): string {
+  return d.toLocaleDateString("en-CA", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+}
+
+function statusClass(s: string): string {
+  if (s === "published") return "tag-accent";
+  if (s === "in-review") return "tag-warn";
+  if (s === "archived") return "tag";
+  return "tag";
+}
+---
+
+<Base
+  title="Research"
+  description="Internal research library covering thesis, policy, segments, and partnerships."
+>
+  <section class="container-page py-16 sm:py-20">
+    <SectionHeader
+      eyebrow="Research library"
+      title="Memos, segment scans, and decision papers"
+      description="A working library, not a finished product. Each entry is a structured memo with explicit status and audience. Sources are tracked separately."
+    />
+
+    {
+      reports.length === 0 ? (
+        <p class="text-ink-muted">No reports yet.</p>
+      ) : (
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {reports.map((r) => (
+            <li class="card card-pad flex flex-col">
+              <div class="flex flex-wrap items-center gap-2 mb-3">
+                <span class={statusClass(r.data.status)}>
+                  {r.data.status}
+                </span>
+                <span class="tag">{r.data.audience}</span>
+                {r.data.tags.slice(0, 3).map((t) => (
+                  <span class="tag">{t}</span>
+                ))}
+              </div>
+              <h2 class="font-serif text-xl text-ink leading-snug">
+                {r.data.title}
+              </h2>
+              <p class="mt-2 text-sm text-ink/85 leading-relaxed flex-1">
+                {r.data.summary}
+              </p>
+              <div class="mt-4 pt-4 border-t border-line flex items-center justify-between text-xs text-ink-muted">
+                <span>Updated {formatDate(r.data.lastUpdated)}</span>
+                <a
+                  class="text-navy-700 font-medium"
+                  href={withBase(`/research/${r.slug}`)}
+                >
+                  Read memo →
+                </a>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </section>
+</Base>

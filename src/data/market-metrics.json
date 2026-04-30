@@ -1,0 +1,62 @@
+{
+  "asOf": "2026-04",
+  "headline": "Canada is mid-build on EV infrastructure: deployment is funded, policy is set, but execution capacity is the bottleneck.",
+  "metrics": [
+    {
+      "id": "zev-mandate",
+      "label": "Federal ZEV mandate (light-duty new sales)",
+      "value": "20% by 2026 · 100% by 2035",
+      "context": "Backed by federal Electric Vehicle Availability Standard.",
+      "sourceId": "src-zev-standard"
+    },
+    {
+      "id": "public-ports",
+      "label": "Public charging ports installed",
+      "value": "~33,000",
+      "context": "Mix of Level 2 and DC fast; concentrated in ON, QC, BC.",
+      "sourceId": "src-nrcan-stations"
+    },
+    {
+      "id": "ports-needed",
+      "label": "Public ports estimated by 2035",
+      "value": "≈450,000",
+      "context": "Order-of-magnitude planning estimate to support 100% ZEV new sales.",
+      "sourceId": "src-zev-infra-gap"
+    },
+    {
+      "id": "zevip",
+      "label": "ZEVIP federal funding committed",
+      "value": "C$1.2B+",
+      "context": "Cost-share for public, workplace, multi-unit, and fleet charging.",
+      "sourceId": "src-zevip"
+    },
+    {
+      "id": "fleet-share",
+      "label": "Fleet share of light + medium duty VKT",
+      "value": "≈30%",
+      "context": "High utilization; primary near-term ROI for depot charging + BESS.",
+      "sourceId": "src-fleet-share"
+    },
+    {
+      "id": "home-charging",
+      "label": "Home charging share of EV energy",
+      "value": "70–80%",
+      "context": "Indicates residential install + smart panel as recurring channel.",
+      "sourceId": "src-home-charging"
+    },
+    {
+      "id": "tariff-risk",
+      "label": "Tariff applied to Chinese-made EVs (Canada)",
+      "value": "100% surtax (in effect since 2024)",
+      "context": "Primary reason to lead with infrastructure, software, and BESS rather than vehicles.",
+      "sourceId": "src-china-tariff"
+    },
+    {
+      "id": "grid-interconnect",
+      "label": "Typical DCFC grid interconnect lead time",
+      "value": "9–18 months",
+      "context": "Largest single execution risk; argues for BESS-buffered sites.",
+      "sourceId": "src-interconnect"
+    }
+  ]
+}

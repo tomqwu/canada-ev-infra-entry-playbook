@@ -1,0 +1,55 @@
+---
+interface Program {
+  id: string;
+  name: string;
+  agency: string;
+  instrument: string;
+  typicalShare: string;
+  fitFor: string[];
+  notes?: string;
+}
+
+interface Props {
+  programs: Program[];
+}
+
+const { programs } = Astro.props as Props;
+---
+
+<div class="card overflow-hidden">
+  <div class="overflow-x-auto">
+    <table class="table-clean min-w-[760px]">
+      <thead>
+        <tr>
+          <th>Program</th>
+          <th>Instrument</th>
+          <th>Typical share</th>
+          <th>Fit for</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          programs.map((p) => (
+            <tr>
+              <td>
+                <div class="font-semibold text-ink">{p.name}</div>
+                <div class="text-xs text-ink-muted mt-0.5">{p.agency}</div>
+              </td>
+              <td>{p.instrument}</td>
+              <td>{p.typicalShare}</td>
+              <td>
+                <div class="flex flex-wrap gap-1.5">
+                  {p.fitFor.map((f) => (
+                    <span class="tag">{f}</span>
+                  ))}
+                </div>
+              </td>
+              <td class="text-ink/80">{p.notes}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

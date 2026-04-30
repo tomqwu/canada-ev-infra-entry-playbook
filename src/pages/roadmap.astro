@@ -1,0 +1,47 @@
+---
+import Base from "../layouts/Base.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import RoadmapTimeline from "../components/RoadmapTimeline.astro";
+import roadmap from "../data/roadmap.json";
+---
+
+<Base
+  title="Roadmap"
+  description="Phased roadmap with explicit decision gates over 0–6 months, 6–24 months, 2–7 years, and 7–20 years."
+>
+  <section class="container-page py-16 sm:py-20">
+    <SectionHeader
+      eyebrow="Roadmap"
+      title="A sequenced plan, gated at each phase"
+      description="Each horizon has its own objective, milestones, and explicit decision gate. Capital and headcount are tranched against these gates."
+    />
+    <RoadmapTimeline horizons={roadmap.horizons} />
+  </section>
+
+  <section class="bg-white border-y border-line">
+    <div class="container-page py-16 sm:py-20">
+      <SectionHeader
+        eyebrow="Decision gates"
+        title="What we have to be true to keep going"
+        description="Decision gates are deliberately conservative. The intent is to stop or replan, not to ship through."
+      />
+      <ul class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {
+          roadmap.horizons.map((h) => (
+            <li class="card card-pad">
+              <p class="eyebrow mb-2">{h.label}</p>
+              <h3 class="font-serif text-lg text-ink">{h.theme}</h3>
+              {h.decisionGate ? (
+                <p class="mt-3 text-sm text-ink/90 leading-relaxed">
+                  {h.decisionGate}
+                </p>
+              ) : (
+                <p class="mt-3 text-sm text-ink-muted">No discrete gate.</p>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</Base>

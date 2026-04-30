@@ -1,0 +1,127 @@
+---
+import Base from "../layouts/Base.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import assumptions from "../data/assumptions.json";
+
+function toneClass(tone: string): string {
+  if (tone === "upside") return "border-accent-300 bg-accent-50";
+  if (tone === "downside") return "border-amber-200 bg-amber-50";
+  return "border-line bg-paper";
+}
+---
+
+<Base
+  title="Financials"
+  description="Capital plan, phasing, and three scenario cards (conservative / base / upside). Planning assumptions only."
+>
+  <section class="container-page py-16 sm:py-20">
+    <SectionHeader
+      eyebrow="Financials"
+      title="Capital plan, phased and gated"
+      description="A simple, transparent view of phased capital, headcount, and outcomes. Numbers are planning ranges, not commitments."
+    />
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+      {
+        assumptions.phases.map((p) => (
+          <article class="card card-pad">
+            <p class="eyebrow mb-2">{p.label}</p>
+            <p class="font-serif text-3xl text-ink leading-tight">
+              C${p.capitalLowM}–{p.capitalHighM}M
+            </p>
+            <p class="mt-1 text-xs text-ink-muted">
+              Headcount: {p.headcount}
+            </p>
+            <p class="mt-4 text-sm text-ink/85 leading-relaxed">
+              {p.objective}
+            </p>
+            <div class="mt-5 pt-5 border-t border-line">
+              <p class="text-[11px] uppercase tracking-wider text-ink-muted mb-2">
+                Outputs
+              </p>
+              <ul class="space-y-1.5 text-sm text-ink/85">
+                {p.outputs.map((o) => (
+                  <li class="flex gap-2">
+                    <span class="text-accent-600 mt-1">›</span>
+                    <span>{o}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="bg-white border-y border-line">
+    <div class="container-page py-16 sm:py-20">
+      <SectionHeader
+        eyebrow="Scenarios"
+        title="Conservative, base, and upside"
+        description="Three rough scenarios at the same operating model. Used to bound the capital ask and to set decision gates."
+      />
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+        {
+          assumptions.scenarios.map((s) => (
+            <article class={`card card-pad border-2 ${toneClass(s.tone)}`}>
+              <div class="flex items-center justify-between mb-3">
+                <span class="eyebrow">{s.label}</span>
+                <span class="tag">5-yr EBITDA: {s.ebitdaYear5Pct}%</span>
+              </div>
+              <p class="font-serif text-3xl text-ink">C${s.totalCapexM}M</p>
+              <p class="mt-1 text-xs text-ink-muted">
+                Total capex through year 3
+              </p>
+              <dl class="mt-5 grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
+                <div>
+                  <dt class="text-[11px] uppercase tracking-wider text-ink-muted">
+                    Sites by year 3
+                  </dt>
+                  <dd class="mt-0.5 text-ink">{s.sitesYear3}</dd>
+                </div>
+                <div>
+                  <dt class="text-[11px] uppercase tracking-wider text-ink-muted">
+                    Fleet depots
+                  </dt>
+                  <dd class="mt-0.5 text-ink">{s.fleetDepots}</dd>
+                </div>
+                <div>
+                  <dt class="text-[11px] uppercase tracking-wider text-ink-muted">
+                    Home installs
+                  </dt>
+                  <dd class="mt-0.5 text-ink">
+                    {s.homeInstalls.toLocaleString()}
+                  </dd>
+                </div>
+                <div>
+                  <dt class="text-[11px] uppercase tracking-wider text-ink-muted">
+                    Software seats
+                  </dt>
+                  <dd class="mt-0.5 text-ink">
+                    {s.softwareSeats.toLocaleString()}
+                  </dd>
+                </div>
+              </dl>
+              <p class="mt-5 text-sm text-ink/85 leading-relaxed">{s.notes}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="container-page py-16 sm:py-20">
+    <div
+      class="card card-pad bg-paper border-line/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
+    >
+      <p class="text-sm text-ink/85">
+        <strong class="text-ink">Disclaimer.</strong>{" "}
+        {assumptions.disclaimer}
+      </p>
+      <span class="text-xs text-ink-muted">
+        As of {assumptions.asOf} · {assumptions.currency}
+      </span>
+    </div>
+  </section>
+</Base>

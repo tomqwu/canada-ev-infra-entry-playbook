@@ -1,0 +1,21 @@
+---
+import Base from "../layouts/Base.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import SourceList from "../components/SourceList.astro";
+import sources from "../data/sources.json";
+---
+
+<Base
+  title="Sources"
+  description="Source register for the playbook. All entries are placeholders pending verification."
+>
+  <section class="container-page py-16 sm:py-20">
+    <SectionHeader
+      eyebrow="Sources"
+      title="Source register"
+      description="Each source has an id, organization, category, link placeholder, verification status, and notes. URLs are intentionally placeholder until verified against the issuing organization."
+    />
+    <SourceList sources={sources.sources} />
+    <p class="mt-4 text-xs text-ink-muted">{sources.note}</p>
+  </section>
+</Base>
